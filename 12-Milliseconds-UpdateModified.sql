@@ -26,7 +26,7 @@ DECLARE @OrderStatus INT = 0;
 			sod.OrderQty,
 			sod.UnitPrice
 		FROM @Updates tvp
-		LEFT JOIN Sales.SalesOrderDetail sod WITH(INDEX(IX_SalesOrderDetail_ProductID))
+		LEFT JOIN Sales.SalesOrderDetail sod 
 			ON sod.ProductID = tvp.ProductID
 			AND sod.SalesOrderID = @SalesOrderID;
 
@@ -63,7 +63,7 @@ DECLARE @OrderStatus INT = 0;
 			sod.OrderQty,
 			sod.UnitPrice
 		FROM @Updates tvp
-		FULL JOIN Sales.SalesOrderDetail sod WITH(INDEX(IX_SalesOrderDetail_ProductID))
+		FULL JOIN Sales.SalesOrderDetail sod 
 			ON sod.ProductID = tvp.ProductID
 			AND sod.SalesOrderID = @SalesOrderID
 		WHERE 

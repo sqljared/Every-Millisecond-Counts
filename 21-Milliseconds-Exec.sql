@@ -52,6 +52,6 @@ BEGIN TRANSACTION;
 		AND sod.SalesOrderID = @SalesOrderID;
 
 ROLLBACK TRANSACTION;
-GO
+GO 10
 
 --Key Lookup

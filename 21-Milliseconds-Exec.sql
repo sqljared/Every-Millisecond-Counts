@@ -1,5 +1,7 @@
 USE AdventureWorks2014
 GO
+SET NOCOUNT ON;
+go
 DECLARE
 	@SalesOrderID INT = 47000,
 	@Updates dbo.OrderQtyTVP,
@@ -35,6 +37,11 @@ BEGIN TRANSACTION;
 		AND sod.SalesOrderID = @SalesOrderID;
 
 ROLLBACK TRANSACTION;
+
+UPDATE upd
+SET
+	OrderQty = OrderQty 
+FROM @Updates upd;
 
 BEGIN TRANSACTION;
 

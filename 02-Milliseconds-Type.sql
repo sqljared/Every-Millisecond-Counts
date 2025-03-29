@@ -10,7 +10,7 @@ BEGIN
 	CREATE TYPE dbo.OrderQtyTVP 
 	AS TABLE(
 		ProductID INT,
-		OrderQty INT,
+		OrderQty SMALLINT,
 		UnitPrice MONEY,
 		INDEX IX_OrderQtyTVP NONCLUSTERED (ProductID)
 	)WITH(MEMORY_OPTIMIZED = ON); 
@@ -27,9 +27,9 @@ BEGIN
 	CREATE TYPE dbo.OrderQtyModTVP 
 	AS TABLE(
 		ProductID INT,
-		OrderQty_New INT NULL,
+		OrderQty_New SMALLINT NULL,
 		UnitPrice_New MONEY NULL,
-		OrderQty_Current INT NULL,
+		OrderQty_Current SMALLINT NULL,
 		UnitPrice_Current MONEY NULL,
 		INDEX IX_OrderQtyTVP NONCLUSTERED (ProductID)
 	)WITH(MEMORY_OPTIMIZED = ON); 

@@ -22,7 +22,7 @@ IF NOT EXISTS(
 BEGIN
 	ALTER DATABASE AdventureWorks2014 
 		ADD FILE (name='AdventureWorks2014_imoltp_f1', 
-			filename='C:\Program Files\Microsoft SQL Server\MSSQL15.SQL2019\MSSQL\DATA\AdventureWorks2014_imoltp') 
+			filename='C:\Program Files\Microsoft SQL Server\MSSQL16.MSSQLSERVER\MSSQL\DATA\AdventureWorks2014_imoltp') 
 		TO FILEGROUP AdventureWorks2014_imoltp;
 END;
 GO

@@ -18,8 +18,11 @@ FROM Sales.SalesOrderDetail sod
 WHERE
 	sod.SalesOrderID = @SalesOrderID;
 
-SELECT * 
-FROM @Updates;
+SELECT tvp.* 
+FROM @Updates tvp
+INNER JOIN Sales.SalesOrderDetail sod
+	ON sod.ProductID = tvp.ProductID
+	AND sod.SalesOrderID = @SalesOrderID;
 
 BEGIN TRANSACTION;
 
@@ -59,6 +62,6 @@ BEGIN TRANSACTION;
 		AND sod.SalesOrderID = @SalesOrderID;
 
 ROLLBACK TRANSACTION;
-GO 10
+GO 100
 
 --Key Lookup

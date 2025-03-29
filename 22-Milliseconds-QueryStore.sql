@@ -4,6 +4,7 @@ SELECT
 	qsq.query_id,
 	qsq.query_hash,
 	OBJECT_NAME(object_id),
+	CAST(qsp.query_plan AS XML) AS query_plan,
 	qt.query_sql_text,
 	--qt.statement_sql_handle,
 	qsp.plan_id,
